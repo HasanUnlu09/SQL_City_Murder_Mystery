@@ -1,0 +1,74 @@
+CREATE DATABASE sql_city;
+
+CREATE TABLE sql_city.crime_scene_report(
+date INT,
+type TEXT,
+description TEXT,
+city TEXT
+);
+
+CREATE TABLE sql_city.drivers_license(
+id INT(255) PRIMARY KEY,
+age INT,
+height INT,
+eye_color TEXT,
+hair_color TEXT,
+gender TEXT,
+plate_number TEXT,
+car_make TEXT,
+car_model TEXT
+);
+
+
+CREATE TABLE sql_city.person(
+id INT(255) PRIMARY KEY,
+name TEXT,
+license_id INT,
+address_number INT,
+address_street_name TEXT,
+ssn INT,
+FOREIGN KEY (license_id) REFERENCES drivers_license(id)
+);
+
+CREATE TABLE sql_city.facebook_event_checkin(
+person_id INT,
+event_id INT,
+event_name TEXT,
+date INT,
+FOREIGN KEY (person_id) REFERENCES person(id)
+);
+
+CREATE TABLE sql_city.interview(
+person_id INT,
+transcript TEXT,
+FOREIGN KEY (person_id) REFERENCES person(id)
+);
+
+CREATE TABLE sql_city.get_fit_now_member(
+id VARCHAR(255) PRIMARY KEY,
+person_id INT,
+name TEXT,
+membership_start_date INT,
+membership_status TEXT,
+FOREIGN KEY (person_id) REFERENCES person(id)
+);
+
+CREATE TABLE sql_city.get_fit_now_check_in(
+membership_id VARCHAR(255),
+check_in_date INT,
+check_in_time INT, 
+check_out_time INT,
+FOREIGN KEY (membership_id) REFERENCES get_fit_now_member(id)
+);
+
+
+CREATE TABLE sql_city.income(
+ssn INT PRIMARY KEY,
+annual_income INT
+);
+
+
+CREATE TABLE sql_city.solutions(
+user TEXT,
+value TEXT
+);
