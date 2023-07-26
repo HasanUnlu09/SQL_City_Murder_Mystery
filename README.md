@@ -2,7 +2,7 @@
 
 In this project, a hypothetical murder mystery in a hypothetical city solved by using initial clues in the SQL queries.
 
-This project is designed and released by Knight Lab Community in the Northwestern University. If you would like to see source web page, you can check out the link below; http://mystery.knightlab.com/
+This project is designed and released by Knight Lab Community in the Northwestern University. If you would like to see source web page, you can check out the following link; http://mystery.knightlab.com/
 
 Also, SQLite database file is obtained from the Kaggle. If you would like to see source web page, you can check out the link below; https://www.kaggle.com/datasets/johnp47/sql-murder-mystery-database
 
